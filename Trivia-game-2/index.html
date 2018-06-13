@@ -6,34 +6,53 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
  	<title>Trivia-Game</title>
-	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<!-- Bootstrap CDN -->
+  <link rel='stylesheet' href="assets/css/style.css">
+  <link rel='stylesheet' href="assets/css/reset.css">
+  <link rel='stylesheet' href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 </head>
 
 <body>
-        <div class="container">
-                <div class="row" style = "margin-top:10%">
-                  <div class="col-md-1">
-                  </div>
-                  <div class="col-md-10">
-                    <h1><strong> Books Trivia</strong></h1>
-                    <p>All the content</p>
-                  </div>
-                  <div class="col-md-1">
-                  </div>
-                </div>
-          </div>
+      <div class="container">
+          
+              <div class="card-header"style="width: 70rem; height: 100px; background-color: blue">
+                <h1 class="card-title"><strong>Aircraft Trivia</strong></h1>
+              </div>
+              
+              <div class="main">
+                  <div class="card" style="width: 70rem ;margin-top: 10px; background-color:cornsilk;" >
+                      <div class="card-header" style="color: blue;font-weight: bold">
+                          Feet, what do I need you for when I have wings to fly? Frida Kahlo.
+                      </div>
+                      <div class="card-body" >
+                          <button id="startBtn" class="btn btn-primary btn-lg btn-block ">Start</button>
+                          <!-- Question page -->
+                          <div class="timer"></div>
+                          <div id=currentQuestion></div>
+                          <div class='image'></div>
+                          <div class='question'></div>
+                          <div id='answerList'></div>
+                          <div id="userAnswer"></div>
+                          <!-- Answer Page -->
+                          <div id=message></div>
+                          <div id=correctedAnswer></div>
+                          <!-- Scoreboard -->
+                          <div id=finalMessage></div>
+                          <div id=correctAnswers></div>
+                          <div id=incorrectAnswers></div>
+                          <div id=unAnswered></div>
+                          <div id='startOverBtn'></div>
+                      </div>
+                    </div>
 
-
-
-
-
+                  </div> 
+      
+      </div>
+        
   <!--Linking javascript-->
+  <script type="text/javascript" src="assets/javascript/questions.js"></script>
   <script type="text/javascript" src="assets/javascript/game.js"></script>
-</body>
-</html>
-
 </body>
 </html>

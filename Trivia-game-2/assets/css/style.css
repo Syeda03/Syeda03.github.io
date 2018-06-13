@@ -1,11 +1,41 @@
-body{
-    background-image: url("../images/books-wallpaper.jpg")
+.header{
+    text-align: center;
 }
 
-.container{
-    background-image: url("../images/ancient-paper-background-9.jpg")
-}
-h1{
+
+.card-header{
+    
     text-align: center;
-    font-weight: bolder;
 }
+.card-body{
+    margin-top: 10px;
+    height:600px;
+    
+}
+.btn{
+    margin-top: 100px;
+
+
+}
+body{
+    background-image: url("../images/body-backgroung.jpg");
+}
+.question-img {
+    width: 200px;
+    height: 200px;
+    margin-left: 35%;
+}
+.timer{
+    text-align: center;
+    color: blue;
+}
+#currentQuestion,#answerList{
+    margin-left: 35%;
+    margin-top:10px;
+    font-size: 22px;
+}
+.question{
+    text-align: center;
+    font-size: 22px;
+}
+    
