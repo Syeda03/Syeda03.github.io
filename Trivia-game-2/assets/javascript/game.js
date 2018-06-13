@@ -4,17 +4,6 @@ $(document).ready(function(){
         newGame();
         
     });
-    $("#startBtn").click(function(){
-        $(".card-header").hide();
-        newGame();
-        
-    });
-
-    $("#startOverBtn").click(function(){
-        $(this).hide();
-        newGame();
-
-    });
     
     function newGame(){
         runTimer();
@@ -34,7 +23,7 @@ $(document).ready(function(){
     var seconds; 
     var userSelect;
 
-    var time = 5;
+        var time = 5;
         var intervalID;
         function runTimer(){
             intervalID= setInterval(timer,1000);
@@ -75,16 +64,16 @@ $(document).ready(function(){
                  optionDiv.append(option);
                  optionDiv.append(optionLabel)
                  $("#answerList").append(optionDiv);
+                 console.log(option)
      
                  option.click(function(){
                     stopTimer();
-                    console.log(option)
                      if(question.answerList.indexOf(answerList) == question.answer){
                          $("#message").text(messages.correct)
                          correctAnswer++;
                      }else{
-                         incorrectAnswer++;
                          $("#message").text(messages.incorrect);
+                         incorrectAnswer++;
                      }
                      setTimeout(newQuestion, 2000);
                      // newQuestion();
@@ -93,7 +82,9 @@ $(document).ready(function(){
      
              currentQuestion++;
         } else {
+           
             scoreboard();
+         
             //alert('results\nCorrect: ' + correctAnswer + "\nIncorrect: " + incorrectAnswer);
         }
             // $(this).append(question.answerList[i]);
@@ -115,9 +106,7 @@ $(document).ready(function(){
             $('#finalMessage').html(messages.finished);
             $('#correctAnswers').html("Correct Answers: " + correctAnswer);
             $('#incorrectAnswers').html("Incorrect Answers: " + incorrectAnswer);
-            $('#startOverBtn').addClass('reset');
-            $('#startOverBtn').show();
-            $('#startOverBtn').html('Start Over?');
+           
         }
     });
     
