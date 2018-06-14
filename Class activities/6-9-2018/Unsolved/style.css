@@ -1,0 +1,13 @@
+.header{
+    text-align: center;
+ 
+}
+button{
+    border: none;
+    background: none;
+    margin:5px;
+}
+.jumbotron{
+    background-color: rgb(21, 85, 202);
+
+}

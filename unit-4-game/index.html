@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+
+<html lang="en-us">
+
+  <head>
+
+    <meta charset='UTF-8'>
+    <title>crystal Game</title>
+
+    <!-- Bootstrap CDN -->
+    <link rel='stylesheet' href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel='stylesheet' href="assets/css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  </head>
+
+  <body>
+
+      <nav class="navbar navbar-light" style="background-color: mediumturquoise">
+          <span class="navbar-brand ">The Magical Crystals</span>
+      </nav>
+
+      <div class="container">
+          <div class="row">
+            <div class="col-md-2">
+            </div>
+            <div class="col-md-8">
+              <h3>Instructions:</h3><hr>
+              <ul>
+                <li>You will be given a random number at the start of the game.</li>
+                <li>There are four random numbers under the crystals shown.</li>
+                <li>By clicking on a crystal you will add a specific amount of points to your total score.</li>
+                <li>Try and match the number shown by adding numbers under the crystals</li>
+                <li>You loose if your score is below or above the number shown.</li>
+                <li> You have to add upto the exact number.</li>
+              </ul>
+              <hr>
+      
+            </div>
+            <div class="col-md-2">
+                
+            </div>
+
+          </div>
+
+          <div class="row">
+            <div class="col-md-2">
+
+            </div>
+           
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <img src="assets/images/image1.png" class=crytal id="numberOne">
+                        <img src="assets/images/image2.png" class=crytal id="numberTwo">
+                        <img src="assets/images/image3.png" class=crytal id= "numberThree">
+                        <img src="assets/images/image4.png" class=crytal id= "numberFour">
+                        <h4>Your Score:<span id ="totalScore"></span></h4>
+                    </div>
+                  </div>
+            </div>
+                  
+            <div class="col-md-4">
+                <div class="card" style="padding-bottom: 30px">
+                  <div class="card-body">
+                      <h5>Number To Be Guessed:<span id="targetNumber"></span></h5>
+                      
+                      <h5> Wins:<span id="winCounter"></span></h5>
+                      <h5>Losses:<span id="lossCounter"></span></h5> 
+                  </div>
+                </div>
+            </div>
+
+            <div class="col-md-2">
+            </div>
+            
+          </div>
+
+        
+            
+      </div>
+
+
+
+    <!-- Link to javascript game.js -->
+  <script type="text/javascript" src="assets/javascript/game.js"></script>
+
+  </body>
+</html>
