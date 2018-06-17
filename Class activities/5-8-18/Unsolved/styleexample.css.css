@@ -1,0 +1,18 @@
+a:link { color: blue; }          /* Unvisited links */
+a:hover { background: yellow; }  /* User hovers */
+a:active { color: lime; }        /* Active links */
+a:focus { color:brown;}
+
+a:link { color: red; }          /* Unvisited links */
+a:hover { background:purple; }  /* User hovers */
+a:active { color:yellow; }        /* Active links */
+a:focus { color:green;}
+
+.red-input:focus{
+    background:yellow;
+    color:red;
+
+}
+p::first-line{
+    color: red;
+}
