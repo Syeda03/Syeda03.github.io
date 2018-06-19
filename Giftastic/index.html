@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<title>Giftastic</title>
+<style type="text/css">
+body{
+    background-color: darkgray;
+}
+button,
+div,
+form,
+input {
+margin: 10px;
+}
+.gif-item{
+    display: inline-table;
+    width: 200px;
+    height: 200px;
+    margin: 20px;
+}
+form{
+    float:right;
+    
+}
+</style>
+</head>
+<body>
+
+    <div class="container">
+            <h1>Animal Search</h1>
+            <!-- Rendered Buttons will get Dumped Here  -->
+            <div id="buttons-view" ></div>
+            <div id="newButtons"></div>
+            <form id="animal-form">
+            <label for="animal-input">Add an Animal</label>
+            <input type="text" id="animal-input"><br>
+            <!-- Button triggers new animals to be added -->
+            <input id="add-animal" type="submit" value="Add an animal">
+        </form>
+        <!-- Gifs will Get Dumped Dere  -->
+        <div id="gifs-appear-here"></div>
+        </div>
+            
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+            <script type="text/javascript" src="assets/javascript/javascript.js"></script>
+
+            
+</body>
+</html>
+
+
+        
+
+
+        
