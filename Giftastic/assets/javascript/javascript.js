@@ -1,5 +1,5 @@
  // Initial array of animals
- var animal = ["Blue Heron", "Duck" ,"Cat","Ostrich","Cow","Camel"];
+ var animal = ["Horse","Parrot","Eagle","Blue Heron", "Duck" ,"Cat","Ostrich","Cow","Dog","Mouse","HedgeHog","Lion"];
 
  renderButtons();
  
@@ -50,8 +50,7 @@
  function displayAnimalGifs(animal) {
 
      // Constructing a queryURL using the animal name
-     var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
-         animal + "&api_key=oRrtGKhsY2YRArxNwYEg6EoYz4T36VYg&limit=10";
+     var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + animal + "&api_key=oRrtGKhsY2YRArxNwYEg6EoYz4T36VYg&limit=10&rating=g";
 
      // Performing an AJAX request with the queryURL
      $.ajax({
@@ -82,12 +81,11 @@
 
      // Setting the src attribute of the image to a property pulled off the result item
              animalImage.attr("src", results[i].images.fixed_height.url);
-             
-             animalImage.attr('data-still', results[i].images.fixed_height_still.url)
+            animalImage.attr('data-still', results[i].images.fixed_height_still.url)
 
              animalImage.attr('data-animate', results[i].images.fixed_height.url)
 
-             .attr('data-state', 'still');
+            //  .attr('data-state', 'still');
      
      // Appending the paragraph and image tag to the animalDiv
              animalDiv.append(p);
