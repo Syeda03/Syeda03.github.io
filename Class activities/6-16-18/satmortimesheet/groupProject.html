@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+    <title>FireBase Time Sheet</title>
+    <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+</head>
+<body>
+    <div class=container>
+        <div class=jumbotron style="text-align: center; background-color: black; color: white;">
+            <h1>TimeSheet</h1>
+        </div>
+        <div style="border: solid 3px;">
+            <div class="emplyHeader" style="background-color: blue; color: white; padding: 2px;">
+                <strong style="font-size: 18px">Current Employee</strong>
+            </div>
+            <div>
+                <table id="table" class="table">
+                    <thead>
+                        <tr>
+                            <th>Employee Name</th>
+                            <th>Role</th>
+                            <th>Start Date</th>
+                            <th>Months Worked</th>
+                            <th>Monthly Rate ($)</th>
+                            <th>Total Billed ($)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+            <br>
+        </div>
+        <br>
+        <div class="add-employee" style="border: solid;">
+            <div class=panelheading style="background-color: blue; color: white; padding: 2px;">
+                <strong style="font-size: 18px">Add Employee</strong>
+            </div>
+            <form style="padding: 5px;">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" class="form-control" id="name-input" placeholder="Name">
+                </div>
+                <div class="form-group">
+                    <label for="role">Role:</label>
+                    <input type="text" class="form-control" id="role-input" placeholder="Role">
+                </div>
+                <div class="form-group">
+                    <label for="start-date">Start-Date:</label>
+                    <input type="text" class="form-control" id="start-date" placeholder="ex. 01/01/80">
+                </div>
+                <div class="form-group">
+                    <label for="start-date">Monthly Rate:</label>
+                    <input type="text" class="form-control" id="monthly-rate" placeholder="">
+                </div>
+                <button type="submit" class="btn btn-default" id="submit-btn">Submit</button>
+            </form>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+    <script type="text/javascript">
+        var config = {
+            apiKey: "AIzaSyCif7We_nUeCoZGlZHHPi8Av_Y_AV1YoX0",
+            authDomain: "satmortimesheet.firebaseapp.com",
+            databaseURL: "https://satmortimesheet.firebaseio.com",
+            projectId: "satmortimesheet",
+            storageBucket: "satmortimesheet.appspot.com",
+            messagingSenderId: "580728376464"
+        };
+        firebase.initializeApp(config);
+        var database = firebase.database();
+       
+        $("#submit-btn").click(function () {
+            var employeeName = $("#name-input").val().trim();
+            var employeeRole = $("#role-input").val().trim();
+            var employeeMonth = $("#monthly-rate").val().trim();
+            console.log(employeeName);
+            database.ref().push({
+                Employee: employeeName,
+                Role: employeeRole,
+                startDate: employeeStart,
+                MonthlyRate: employeeMonth,
+                dateAdded: firebase.database.ServerValue.TIMESTAMP
+            });
+        });
+        var employeeStart = $("#start-date").val().trim();
+        var dateFormat = "MM/DD/YY";
+        var monthsConvert = moment(employeeStart, dateFormat);
+        var monthsWorked = moment(monthsConvert).diff(moment(), "months");
+        var totalBilled = monthsWorked*monthsConvert;
+        var employeeBill
+        console.log(monthsWorked);
+        database.ref().orderByChild("dateAdded").on("child_added", function (childSnapshot) {
+            var tBody = $("tbody");
+            var tRow = $("<tr>");
+            employeeName = $("<td>").html(childSnapshot.val().Employee);
+            employeeRole = $("<td>").html(childSnapshot.val().Role);
+            employeeStart = $("<td>").html(childSnapshot.val().startDate);
+            employeeTime = $("<td>").html(monthsWorked);
+            employeeMonth = $("<td>").html(childSnapshot.val().MonthlyRate);
+            employeeBill = $("<td>").html(totalBilled);
+            tRow.append(employeeName, employeeRole, employeeStart, employeeMonth);
+            tBody.append(tRow);
+        });
+    </script>
+</body>
+</html>
