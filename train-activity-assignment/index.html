@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <title>Train Schedule</title>
+    <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+</head>
+<style>
+    .jumbotron{
+        background-image: url("../train-activity-assignment/assets/images/header.jpg");
+    }
+    h1{
+        background-color: black;padding: 20px;
+    }
+    body{
+        background-color: antiquewhite;
+    }
+</style>
+<body>
+    <div class=container>
+        <div class=jumbotron style="text-align: center; color:white;  ">
+          <h1><i class="fas fa-train"></i> Train Schedule <i class="fas fa-train"></i></h1>
+        </div>
+        <div style="border: solid 3px;">
+            <div class="emplyHeader" style="background-color: black; color: white; padding: 2px;">
+                <strong style="font-size: 18px">Current Train Schedule</strong>
+            </div>
+            <div>
+                <table id="table" class="table">
+                    <thead>
+                        <tr>
+                            <th>Train Name</th>
+                            <th>Destination</th>
+                            <th>Frequency(min)</th>
+                            <th>Next Arrival</th>
+                            <th>Minutes Away</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+            <br>
+        </div>
+        <br>
+        <div class="add-train" style="border: solid;">
+            <div class=panelheading style="background-color: black; color: white; padding: 2px;">
+                <strong style="font-size: 18px">Add Train</strong>
+            </div>
+            <form style="padding: 5px;">
+                <div class="form-group">
+                    <label for="name">Train Name:</label>
+                    <input type="text" class="form-control" id="name-input" placeholder="Name">
+                </div>
+                <div class="form-group">
+                    <label for="destination">Destination:</label>
+                    <input type="text" class="form-control" id="dest-input" placeholder="Destination">
+                </div>
+                <div class="form-group">
+                    <label for="firstTrainTime">First Train Time(HH:mm-military time):</label>
+                    <input type="text" class="form-control" id="first-train">
+                </div>
+                <div class="form-group">
+                    <label for="frequency">Frequency (min):</label>
+                    <input type="text" class="form-control" id="freq-min" placeholder="">
+                </div>
+                <button type="submit" class="btn btn-default" id="submit-btn">Submit</button>
+            </form>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+    <script type="text/javascript" src="assets/javascript/javascript.js"></script>
+</body>
+</html>
