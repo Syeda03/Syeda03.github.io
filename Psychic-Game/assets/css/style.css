@@ -1,0 +1,23 @@
+
+
+header h1{
+    color: black;
+    text-align: center;
+    font-weight: 1500;
+    
+    background-color: rgb(158, 14, 14);
+    padding: 2%;
+}
+
+body{
+    background-color: antiquewhite;
+}
+h2{
+    
+    margin-top: 5%;
+    margin-left: 25%;
+}
+div{
+    margin-left: 14%;
+}
+
