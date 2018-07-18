@@ -78,8 +78,12 @@ function showTweets(){
         console.log("-----------------------");
         
         // //adds text to log.txt file
-        // fs.appendFile('log.txt', "@SZehra31314510: " + tweets[i].text + " Created At: " + date.substring(0, 19));
-        // fs.appendFile('log.txt', "-----------------------");
+        fs.appendFile('log.txt', "@SZehra31314510: " + tweets[i].text + " Created At: " + date.substring(0, 19),(err)=> {
+            if (err) throw err;
+          });
+        fs.appendFile('log.txt', "-----------------------",(err)=> {
+            if (err) throw err;
+          });
       }
       }
     else
@@ -103,12 +107,25 @@ function showTweets(){
           console.log("Album: " + songData.album.name);
           console.log("-----------------------");
           
+        
+
           // //adds text to log.txt
-          // fs.appendFile('log.txt', songData.artists[0].name);
-          // fs.appendFile('log.txt', songData.name);
-          // fs.appendFile('log.txt', songData.preview_url);
-          // fs.appendFile('log.txt', songData.album.name);
-          // fs.appendFile('log.txt', "-----------------------");
+          fs.appendFile('log.txt', songData.artists[0].name,(err)=> {
+            if (err) throw err;
+          });
+
+          fs.appendFile('log.txt', songData.name,(err)=> {
+            if (err) throw err;
+          });
+          fs.appendFile('log.txt', songData.preview_url,(err)=> {
+            if (err) throw err;
+          });
+          fs.appendFile('log.txt', songData.album.name,(err)=> {
+            if (err) throw err;
+          });
+          fs.appendFile('log.txt', "-----------------------",(err)=> {
+            if (err) throw err;
+          });
         }
       } else{
         console.log('Error occurred.');
@@ -145,15 +162,28 @@ console.log("!!------------------------------------------------------------!!")
 
 
       // //adds text to log.txt
-      // fs.appendFile('log.txt', "Title: " + body.Title);
-      // fs.appendFile('log.txt', "Release Year: " + body.Year);
-      // fs.appendFile('log.txt', "IMdB Rating: " + body.imdbRating);
-      // fs.appendFile('log.txt', "Country: " + body.Country);
-      // fs.appendFile('log.txt', "Language: " + body.Language);
-      // fs.appendFile('log.txt', "Plot: " + body.Plot);
-      // fs.appendFile('log.txt', "Actors: " + body.Actors);
-      // fs.appendFile('log.txt', "Rotten Tomatoes Rating: " + body.tomatoRating);
-      // fs.appendFile('log.txt', "Rotten Tomatoes URL: " + body.tomatoURL);
+      fs.appendFile('log.txt', "Title: " + body.Title,(err)=> {
+        if (err) throw err;
+      });
+      fs.appendFile('log.txt', "Release Year: " + body.Year,(err)=> {
+        if (err) throw err;
+      });
+      fs.appendFile('log.txt', "IMdB Rating: " + body.imdbRating,(err)=> {
+        if (err) throw err;
+      });
+      fs.appendFile('log.txt', "Country: " + body.Country,(err)=> {
+        if (err) throw err;
+      });
+      fs.appendFile('log.txt', "Language: " + body.Language,(err)=> {
+        if (err) throw err;
+      });
+      fs.appendFile('log.txt', "Plot: " + body.Plot,(err)=> {
+        if (err) throw err;
+      });
+      fs.appendFile('log.txt', "Actors: " + body.Actors,(err)=> {
+        if (err) throw err;
+      });
+    
 
     } else{
       console.log('Error occurred.')
