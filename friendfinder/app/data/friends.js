@@ -1,15 +1,15 @@
 var friends = [
 	{
 		name: 'The Introvert friend',
-		photo: 'url("../images/Introverts-hate-phone.jpg")',
+		photo: "../images/Introverts-hate-phone.jpg",
 		scores: [5, 1, 2, 2, 5, 5, 5, 1, 3, 1]
 	},{
 		name: 'The Extrovert friend',
-		photo: 'url("../images/extrovert.webp")',
+		photo: "../images/extrovert.webp",
 		scores: [1, 5, 3, 4, 1, 1, 1, 5, 3, 5]
 	},{
 		name: 'The Narcissist friend',
-		photo: 'url("../images/narcissist.jpg")',
+		photo: "../images/narcissist.jpg",
 		scores: [3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
 	},{
 		name: 'The helpful friend',
